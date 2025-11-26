@@ -1,9 +1,9 @@
 class AzureDevopsBoardsMcpRust < Formula
   desc "MCP server exposing Azure DevOps Boards"
   homepage "https://github.com/danielealbano/azure-devops-boards-mcp-rust"
-  version "0.1.0"
-  url "https://github.com/danielealbano/azure-devops-boards-mcp-rust/releases/download/v0.1.0/azure-devops-boards-mcp-rust-v0.1.0-macos-aarch64.tar.gz"
-  sha256 "ba1537bb6f4861cff0fbbc38af82fb5a991f2343c5b9df2e30b2a96ad0fdeb5f"
+  version "0.3.0"
+  url "https://github.com/danielealbano/azure-devops-boards-mcp-rust/releases/download/v0.3.0/azure-devops-boards-mcp-rust-v0.3.0-macos-aarch64.tar.gz"
+  sha256 "6f7f70cb4655e1fdff809b3b4b166a487ea44ef88381ceac1293e9d55deb83a7"
   license "MIT" # or whatever you actually use
 
   def install
