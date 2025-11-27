@@ -7,10 +7,30 @@ class McpForAzureDevopsBoards < Formula
   license "MIT" # or whatever you actually use
 
   def install
-    bin.install "azure-devops-boards-mcp-rust"
+    # Install the new binary
+    bin.install "mcp-for-azure-devops-boards"
+
+    # Compatibility wrapper for the old name
+    (bin/"azure-devops-boards-mcp-rust").write <<~EOS
+      #!/bin/bash
+      echo "⚠️  azure-devops-boards-mcp-rust has been renamed to mcp-for-azure-devops-boards." >&2
+      echo "   Please update your scripts / aliases to use 'mcp-for-azure-devops-boards'." >&2
+      exec "#{bin}/mcp-for-azure-devops-boards" "$@"
+    EOS
+    chmod 0755, bin/"azure-devops-boards-mcp-rust"
+  end
+
+  def caveats
+    <<~EOS
+      The CLI was renamed from `azure-devops-boards-mcp-rust` to `mcp-for-azure-devops-boards`.
+
+      A compatibility wrapper for `azure-devops-boards-mcp-rust` is still installed but may be
+      removed in a future release. Please update any scripts or aliases to use the new name.
+    EOS
   end
 
   test do
     system "#{bin}/mcp-for-azure-devops-boards", "--help"
+    system "#{bin}/azure-devops-boards-mcp-rust", "--help"
   end
 end
