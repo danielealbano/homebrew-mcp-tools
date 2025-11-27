@@ -10,14 +10,8 @@ class McpForAzureDevopsBoards < Formula
     # Install the new binary
     bin.install "mcp-for-azure-devops-boards"
 
-    # Compatibility wrapper for the old name
-    (bin/"azure-devops-boards-mcp-rust").write <<~EOS
-      #!/bin/bash
-      echo "⚠️  azure-devops-boards-mcp-rust has been renamed to mcp-for-azure-devops-boards." >&2
-      echo "   Please update your scripts / aliases to use 'mcp-for-azure-devops-boards'." >&2
-      exec "#{bin}/mcp-for-azure-devops-boards" "$@"
-    EOS
-    chmod 0755, bin/"azure-devops-boards-mcp-rust"
+    # Backwards-compatible CLI name for a deprecation window
+    bin.install_symlink "mcp-for-azure-devops-boards" => "azure-devops-boards-mcp-rust"
   end
 
   def caveats
