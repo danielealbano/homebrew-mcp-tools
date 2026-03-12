@@ -1,9 +1,9 @@
 class McpForAzureDevopsBoards < Formula
   desc "MCP server for Azure DevOps Boards"
   homepage "https://github.com/danielealbano/mcp-for-azure-devops-boards"
-  version "0.5.0"
-  url "https://github.com/danielealbano/mcp-for-azure-devops-boards/releases/download/v0.5.0/mcp-for-azure-devops-boards-v0.5.0-macos-aarch64.tar.gz"
-  sha256 "54c848be4afaadc0911b4e71f4c10025365e2c3360a2a9f816ab7b63f1190ff0"
+  version "0.7.0"
+  url "https://github.com/danielealbano/mcp-for-azure-devops-boards/releases/download/v0.7.0/mcp-for-azure-devops-boards-v0.7.0-macos-aarch64.tar.gz"
+  sha256 "6b11a1b7075827817b5a984c432a80ed30f7a856fafe7c4b9a44076a33c611c9"
   license "MIT"
 
   def install
